@@ -11,7 +11,7 @@ pipeline {
       stage('Npm Install') {
          steps {
              sh 'npm install'
-        }
+        }   
       }
       
       stage('Run Consumer Test') {
@@ -22,13 +22,13 @@ pipeline {
       
       stage('Publish Pact to Pact Broker') {
          steps {
-             sh 'node src/rest-api/consumer/consumerPactPublish.js'
+             sh 'npm run publish-pact'
         }
       }
 
       stage('Deploy') {
          steps {
-            sh 'pact-broker can-i-deploy --pacticipant=Date Consumer --broker-base-url=http://localhost:8282 --latest'
+            sh 'npm run can-i-deploy'
          }
       }
    }
