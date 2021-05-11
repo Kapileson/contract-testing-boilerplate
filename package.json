@@ -1,0 +1,40 @@
+{
+  "name": "pact-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "provider-service": "node src/provider/provider.js",
+    "consumer-service-test": "mocha --timeout 10000 src/consumer/test/consumer.spec.js",
+    "consumer-service-pact": "mocha --timeout 10000 src/consumer/test/consumerPact.spec.js",
+    "provider-pact-broker": "mocha --timeout 40000 src/provider/test/providerPactBroker.spec.js",
+    "provider-pact-local": "mocha --timeout 40000 src/provider/test/providerPactLocal.spec.js",
+    "publish-pact": "node src/consumer/consumerPactPublish.js",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant 'Date Consumer' --latest --broker-base-url http://localhost:8282 --broker-username $PACT_USERNAME --broker-password $PACT_PASSWORD",
+    "format": "prettier --write --single-quote '**/*.{js,jsx,ts,tsx}'",
+    "eslint": "eslint src/* --ext .js --ext .jsx"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^9.15.5",
+    "@pact-foundation/pact-node": "^10.12.2",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.1",
+    "cli-color": "^1.1.0",
+    "concurrently": "^3.1.0",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "mocha": "^8.4.0",
+    "nock": "^10.0.2",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "moment": "^2.18.1",
+    "path": "^0.12.7",
+    "superagent": "^3.3.2"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}

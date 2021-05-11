@@ -1,0 +1,7 @@
+fileignoreconfig:
+- filename: yarn.lock
+  checksum: e88851dae5ebf929740444adcb98553ae642153c52b981cbbc6406bd2eb697db
+- filename: package-lock.json
+  checksum: 6e25c245de71a0169616090086ee621e5cb7298e0a8d4391fba3f5fb50471649
+- filename: docker-compose.yaml
+  checksum: 1607a3aee690fb19df3f714c373f78bd1e0053953aca3ebe1d8c04a91294934e
