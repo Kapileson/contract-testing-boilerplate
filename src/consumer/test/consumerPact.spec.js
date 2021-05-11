@@ -4,7 +4,7 @@ const path = require('path');
 const chai = require('chai');
 const nock = require('nock');
 const interactions = require('../pact/interactions');
-const API_PORT = 8081;
+const API_PORT = 1234;
 
 const API_HOST = `http://localhost:${API_PORT}`;
 const expect = chai.expect;
@@ -32,8 +32,9 @@ describe('Pact Consumer', () => {
     });
 
     afterEach(() => {
-      provider.verify();
+      return provider.verify();
     });
+    
     describe('When a call to date provider is made', () => {
       
       describe('and valid date is provided', () => {
