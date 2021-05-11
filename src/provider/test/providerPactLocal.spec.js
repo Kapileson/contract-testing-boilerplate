@@ -14,6 +14,6 @@ var opts = {
 
 describe('Pact Provider verification', () => {
   it('Should validate the date consumer', async () => {
-    await new Verifier().verifyProvider(opts);
+    await new Verifier(opts).verifyProvider();
   });
 });

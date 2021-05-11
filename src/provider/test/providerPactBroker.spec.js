@@ -4,7 +4,7 @@ const path = require('path');
 
 var opts = {
   providerBaseUrl: 'http://localhost:8081',
-  provider: 'Date Provider',
+  provider: 'DateProvider',
   pactBrokerUrl: 'http://pact_broker.com:9292',
   pactBrokerUsername: '',
   pactBrokerPassword: '',

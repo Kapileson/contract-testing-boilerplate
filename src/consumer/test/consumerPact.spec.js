@@ -12,8 +12,8 @@ const MOCK_SERVER_PORT = 9123;
 
 describe('Pact Consumer', () => {
   const provider = new Pact({
-    consumer: 'Date Consumer',
-    provider: 'Date Provider',
+    consumer: 'DateConsumer',
+    provider: 'DateProvider',
     port: MOCK_SERVER_PORT,
     log: path.resolve(process.cwd(), 'logs', 'pact.log'),
     dir: path.resolve(process.cwd(), 'pacts'),
