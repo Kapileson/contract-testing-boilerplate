@@ -16,7 +16,7 @@ pipeline {
       
       stage('Run Consumer Test') {
          steps {
-             sh 'npm run consumer-service-pact'
+             sh 'npm run consumer-pact'
         }
       }
       
