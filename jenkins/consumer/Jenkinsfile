@@ -11,13 +11,11 @@ pipeline {
       stage('Npm Install') {
          steps {
              sh 'npm install'
-             sh 'npm audit fix --force'
         }
       }
       
       stage('Run Consumer Test') {
          steps {
-            sleep 10
              sh 'npm run consumer-service-pact'
         }
       }
@@ -30,7 +28,7 @@ pipeline {
 
       stage('Deploy') {
          steps {
-            sh 'pact-broker can-i-deploy --pacticipant=Date Consumer --broker-base-url=http://pact_broker.com:9292 --latest'
+            sh 'pact-broker can-i-deploy --pacticipant=Date Consumer --broker-base-url=http://localhost:8282 --latest'
          }
       }
    }
