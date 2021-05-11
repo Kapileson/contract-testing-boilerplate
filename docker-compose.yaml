@@ -25,7 +25,7 @@ services:
         aliases:
           - pact_broker
     ports:
-      - "8282:9292"
+      - "8282:9999"
     depends_on:
       - postgres
     environment:
