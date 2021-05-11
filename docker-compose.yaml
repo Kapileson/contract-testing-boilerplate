@@ -25,7 +25,7 @@ services:
         aliases:
           - pact_broker
     ports:
-      - "8282:9999"
+      - "8282:8282"
     depends_on:
       - postgres
     environment:
@@ -35,7 +35,7 @@ services:
       PACT_BROKER_DATABASE_PASSWORD: password
       PACT_BROKER_DATABASE_HOST: postgres
       PACT_BROKER_DATABASE_NAME: postgres
-      PACT_BROKER_PORT: "9292"
+      PACT_BROKER_PORT: "8282"
       PACT_BROKER_LOG_LEVEL: INFO
       PACT_BROKER_WEBHOOK_HOST_WHITELIST: "web"
       PACT_BROKER_WEBHOOK_SCHEME_WHITELIST: http

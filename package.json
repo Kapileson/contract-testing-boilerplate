@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "provider-service": "node src/provider/provider.js",
-    "consumer-service-test": "mocha --timeout 10000 src/consumer/test/consumer.spec.js",
-    "consumer-service-pact": "mocha --timeout 10000 src/consumer/test/consumerPact.spec.js",
+    "date-api": "node src/provider/provider.js",
+    "consumer-test": "mocha --timeout 10000 src/consumer/test/consumer.spec.js",
+    "consumer-pact": "mocha --timeout 10000 src/consumer/test/consumerPact.spec.js",
     "provider-pact-broker": "mocha --timeout 10000 src/provider/test/providerPactBroker.spec.js",
     "provider-pact-local": "mocha --timeout 10000 src/provider/test/providerPactLocal.spec.js",
     "publish-pact": "node src/consumer/consumerPactPublish.js",
-    "can-i-deploy": "pact-broker can-i-deploy --pacticipant=DateConsumer --broker-base-url=http://pact_broker.com:9999 --latest",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant=DateConsumer --broker-base-url=http://pact_broker.com:8282 --latest",
     "format": "prettier --write --single-quote '**/*.{js,jsx,ts,tsx}'",
     "eslint": "eslint src/* --ext .js --ext .jsx"
   },

@@ -5,7 +5,7 @@ const path = require('path');
 var opts = {
   providerBaseUrl: 'http://localhost:8081',
   provider: 'DateProvider',
-  pactBrokerUrl: 'http://pact_broker.com:9999',
+  pactBrokerUrl: 'http://pact_broker.com:8282',
   pactBrokerUsername: '',
   pactBrokerPassword: '',
   publishVerificationResult: true,
@@ -18,8 +18,8 @@ var opts = {
 
 describe('Pact Provider verification', () => {
   it('Should validate the date consumer', async () => {
-    const output = await new Verifier().verifyProvider(opts);
+    const output = await new Verifier(opts).verifyProvider();
     console.log(output);
-    server.close; 
+    server.close(); 
   });
 });

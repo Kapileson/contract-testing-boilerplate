@@ -7,7 +7,7 @@ var opts = {
   pactUrls: [
     path.resolve(
       __dirname,
-      '../../../pacts/date_consumer-date_provider.json'
+      '../../../pacts/dateconsumer-dateprovider.json'
     ),
   ],
 };
@@ -15,5 +15,6 @@ var opts = {
 describe('Pact Provider verification', () => {
   it('Should validate the date consumer', async () => {
     await new Verifier(opts).verifyProvider();
+    server.close();
   });
 });
