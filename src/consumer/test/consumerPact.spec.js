@@ -23,17 +23,13 @@ describe('Pact Consumer', () => {
   });
 
   describe('Consumer Driven Contract', () => {
-    before(() => {
-      return provider.setup();
-    });
+    before(() => provider.setup());
 
-    after(() => {
-      return provider.finalize();
-    });
+    afterEach(() => provider.verify());
 
-    afterEach(() => {
-      return provider.verify();
-    });
+    afterEach(() => provider.removeInteractions());
+
+    after(() => provider.finalize());
     
     describe('When a call to date provider is made', () => {
       
