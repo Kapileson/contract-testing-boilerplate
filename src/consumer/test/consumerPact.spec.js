@@ -25,7 +25,7 @@ describe('Pact Consumer', () => {
   describe('Consumer Driven Contract', () => {
     before(() => provider.setup());
 
-    afterEach(() => provider.verify());
+    //afterEach(() => provider.verify());
 
     afterEach(() => provider.removeInteractions());
 
