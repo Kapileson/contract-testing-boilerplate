@@ -28,7 +28,7 @@ module.exports = {
   },
 
   invalidDate: {
-    state: "Null Date",
+    state: "Empty Date",
     uponReceiving: "a request for JSON data",
     withRequest: {
       method: "GET",
