@@ -13,7 +13,7 @@ let opts = {
 pact
   .publishPacts(opts)
   .then(() => {
-    console.log('Pact contract publishing complete!');
+    console.log('Pact contract publishing completed!');
   })
   .catch((e) => {
     throw new Error('Pact contract publishing failed: ', e)
