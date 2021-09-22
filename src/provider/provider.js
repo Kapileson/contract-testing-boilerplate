@@ -6,18 +6,15 @@ app.get('/provider/validDate', function(req, res) {
   let validDate = req.query.date;
   if (!validDate) {
     res.status(400);
-    res.json({ error: 'validDate is required' });
+    res.json({ error: 'Invalid date!' });
   } else if (!moment(validDate, moment.ISO_8601).isValid()) {
     res.status(400);
-    res.json({ error: `'${validDate}' is not a date` });
+    res.json({ status: 'No', error: `'${validDate}' is not a date` });
   } else {
     if (moment(validDate).isValid) {
       res.json({
-        test: 'NO',
-        validDate: moment(new Date(), moment.ISO_8601).format(
-          'YYYY-MM-DDTHH:mm:ssZ'
-        ),
-        count: 10,
+        date: moment(new Date(), moment.ISO_8601).format('DD-MM-YYYY'),
+        count: 10
       });
     } else {
       res.status(400);

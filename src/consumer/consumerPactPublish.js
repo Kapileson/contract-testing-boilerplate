@@ -7,14 +7,14 @@ let opts = {
   pactBrokerUsername: '',
   pactBrokerPassword: '',
   consumerVersion: '1.0',
-  tags: ["prod", "test"]
+  tags: ["dev"]
 };
 
 pact
   .publishPacts(opts)
   .then(() => {
-    console.log('Pact contract publishing completed!');
+    console.log('Pact contract published!');
   })
   .catch((e) => {
-    throw new Error('Pact contract publishing failed: ', e)
+    throw new Error('Pact contract failed to publish: ', e)
   });

@@ -1,12 +1,9 @@
 const request = require('superagent');
-const API_HOST = 'http://localhost';
-const API_PORT = 9123;
-const moment = require('moment');
 
-const API_ENDPOINT = `${API_HOST}:${API_PORT}`;
+//const API_ENDPOINT = `${API_HOST}:${API_PORT}`;
 
 class Consumer {
-  async fetchDate(givenDate) {
+  async fetchDate(API_ENDPOINT, givenDate) {
     try {
       return await request.get(
         `${API_ENDPOINT}/provider/validDate?date=${givenDate}`
@@ -16,20 +13,18 @@ class Consumer {
     }
   }
 
-  async parseDate(givenDate) {
-    const response = await this.fetchDate(givenDate);
-    if (response.body.error) {
-      return { error: 'validDate is required' };
-    }
-    if (moment(response.body.validDate).isValid()) {
+  async getDetails(API_ENDPOINT, givenDate) {
+    const response = await this.fetchDate(API_ENDPOINT, givenDate);
+    if (response == undefined) {
+      return response;
+    }else{
       return {
-        date: moment(givenDate, moment.ISO_8601).format('YYYY, LL'),
-        format: 'valid',
+        date: response.body.date,
         expiry: 'lifetime',
-        count: response.body.count * 0.5,
-      };
+        count: response.body.count * 0.5
+      }
+     }
     }
-  }
 }
 
 const consumer = new Consumer();

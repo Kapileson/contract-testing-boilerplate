@@ -14,7 +14,7 @@ var opts = {
   providerVersion: '1.0',
   logLevel: 'DEBUG',
   timeout: 120000,
-  tags: ["prod", "test"]
+  tags: ['dev']
   // stateHandlers: {
   //   'Batman exists': () => {
   //     Console.log('')

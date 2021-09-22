@@ -31,7 +31,7 @@ services:
     environment:
       PACT_BROKER_DATABASE_URL_ENVIRONMENT_VARIABLE_NAME: DATABASE_URL
       DATABASE_URL: "postgres://postgres:password@postgres/postgres"
-      PACT_BROKER_DATABASE_USERNAME: postgres 
+      PACT_BROKER_DATABASE_USERNAME: postgres
       PACT_BROKER_DATABASE_PASSWORD: password
       PACT_BROKER_DATABASE_HOST: postgres
       PACT_BROKER_DATABASE_NAME: postgres
@@ -40,8 +40,7 @@ services:
       PACT_BROKER_WEBHOOK_HOST_WHITELIST: "web"
       PACT_BROKER_WEBHOOK_SCHEME_WHITELIST: http
       PACT_BROKER_WEBHOOK_HTTP_METHOD_WHITELIST: "POST"
-  
-  
+
   jenkins:
     # image: jenkins/jenkins
     build: .
@@ -53,9 +52,9 @@ services:
       - 8080:8080
       - 50000:50000
     links:
-        - pact_broker:pact_broker.com
+      - pact_broker:pact_broker.com
 
-  # uncomment for docker in docker
+    # uncomment for docker in docker
     privileged: true
 networks:
   main:
