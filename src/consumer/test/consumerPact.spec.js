@@ -33,7 +33,7 @@ describe('Pact Consumer', () => {
       describe('and valid date is provided', () => {
         it('can process the JSON payload from the date provider', async () => {
           provider.addInteraction({
-            state: "Valid date",
+            state: "Valid Date",
             uponReceiving: "a request for JSON data",
             withRequest: {
               method: "GET",
