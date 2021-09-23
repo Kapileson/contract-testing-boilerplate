@@ -6,7 +6,8 @@ const { Console } = require('console');
 var opts = {
   providerBaseUrl: 'http://localhost:8081',
   provider: 'DateProvider',
-  pactBrokerUrl: 'http://pact_broker.com:8282',
+  // pactBrokerUrl: 'http://pact_broker.com:8282',
+  pactBrokerUrl: 'http://localhost:8282',
   pactBrokerUsername: '',
   pactBrokerPassword: '',
   publishVerificationResult: true,
