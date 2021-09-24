@@ -15,10 +15,10 @@ var opts = {
   providerVersion: '1.0',
   logLevel: 'DEBUG',
   timeout: 120000,
-  tags: ['dev']
+  tags: ['dev'],
   // stateHandlers: {
-  //   'Batman exists': () => {
-  //     Console.log('')
+  //   'Superman exists': () => {
+  //     'insert superman user into user table';
   //   }
   // },
   // requestFilter: (req, res) => {
